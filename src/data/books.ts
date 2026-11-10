@@ -1,3 +1,5 @@
+import { SCRAPED_COLLECTION_BOOKS } from './freeCollections';
+
 export interface Chapter {
   id: string;
   number: number;
@@ -1471,5 +1473,6 @@ The final word is not survival. It is transformation.`
       }
     ],
     reviews: []
-  }
+  },
+  ...SCRAPED_COLLECTION_BOOKS
 ];

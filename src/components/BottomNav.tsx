@@ -19,11 +19,10 @@ export default function BottomNav() {
       isActive: pathname === '/'
     },
     {
-      label: 'Library',
-      href: '/library',
-      icon: 'local_library',
-      isActive: pathname === '/library',
-      badge: bookmarks.length
+      label: 'Collections',
+      href: '/collections',
+      icon: 'collections_bookmark',
+      isActive: pathname === '/collections'
     },
     {
       label: 'Unbound #1',
@@ -32,10 +31,11 @@ export default function BottomNav() {
       isActive: pathname.startsWith('/book/unbound') || pathname.startsWith('/read/unbound')
     },
     {
-      label: 'Studio',
-      href: '/studio',
-      icon: 'edit_note',
-      isActive: pathname === '/studio'
+      label: 'Library',
+      href: '/library',
+      icon: 'local_library',
+      isActive: pathname === '/library',
+      badge: bookmarks.length
     },
     {
       label: 'Admin',

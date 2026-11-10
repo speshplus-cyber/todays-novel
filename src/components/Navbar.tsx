@@ -41,6 +41,16 @@ export default function Navbar() {
               ★ Read UNBOUND (#1)
             </Link>
             <Link
+              href="/collections"
+              className={`px-3 py-1 rounded-full text-xs font-semibold transition-colors ${
+                pathname === '/collections'
+                  ? 'bg-surface-container-high text-primary'
+                  : 'text-on-surface-variant hover:text-on-surface'
+              }`}
+            >
+              Collections ({books.length})
+            </Link>
+            <Link
               href="/library"
               className={`px-3 py-1 rounded-full text-xs font-semibold transition-colors ${
                 pathname === '/library'

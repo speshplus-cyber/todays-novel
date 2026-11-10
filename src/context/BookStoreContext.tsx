@@ -411,9 +411,9 @@ export function BookStoreProvider({ children }: { children: React.ReactNode }) {
       const savedBooks = localStorage.getItem(STORAGE_KEY_BOOKS);
       if (savedBooks) {
         const parsed: Book[] = JSON.parse(savedBooks);
-        const unboundInitial = INITIAL_BOOKS[0];
-        const others = parsed.filter((b) => b.id !== unboundInitial.id);
-        setBooks([unboundInitial, ...others]);
+        const initialSlugs = new Set(INITIAL_BOOKS.map((b) => b.slug));
+        const customBooks = parsed.filter((b) => !initialSlugs.has(b.slug));
+        setBooks([...INITIAL_BOOKS, ...customBooks]);
       }
       const savedBookmarks = localStorage.getItem(STORAGE_KEY_BOOKMARKS);
       if (savedBookmarks) setBookmarks(JSON.parse(savedBookmarks));

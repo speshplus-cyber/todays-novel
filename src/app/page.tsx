@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useBookStore } from '@/context/BookStoreContext';
 import { GENRES } from '@/data/books';
+import { BOOK_COLLECTIONS } from '@/data/freeCollections';
 import { triggerInstallModal } from '@/components/InstallAppManager';
 
 export default function HomePage() {
@@ -328,6 +329,81 @@ export default function HomePage() {
                   <span className="text-primary-fixed-dim truncate">{book.author}</span>
                   <span>•</span>
                   <span>Free</span>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* CURATED SECTION 2.5: TOP FREE BOOKS BY COLLECTION (6 CURATED SHELVES) */}
+      <section className="px-4 flex flex-col space-y-3.5">
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="flex items-center space-x-1.5">
+              <span className="w-1.5 h-4 rounded-full bg-tertiary"></span>
+              <h3 className="text-[19px] font-bold text-on-surface">
+                Browse by Free Collection
+              </h3>
+            </div>
+            <p className="text-xs text-on-surface-variant pl-3">
+              {books.length} complete free novels organized into 6 thematic collections
+            </p>
+          </div>
+          <Link
+            href="/collections"
+            className="text-xs font-extrabold text-primary flex items-center space-x-0.5 hover:underline"
+          >
+            <span>All 6 Collections</span>
+            <span className="material-symbols-outlined text-[14px]">
+              chevron_right
+            </span>
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {BOOK_COLLECTIONS.map((col) => {
+            const colBooks = col.bookSlugs
+              .map((s) => books.find((b) => b.slug === s))
+              .filter(Boolean);
+            return (
+              <Link
+                key={col.id}
+                href="/collections"
+                className="group rounded-2xl border border-surface-variant/50 bg-surface-container-low p-3.5 hover:border-primary/50 active:scale-[0.99] transition-all flex items-center justify-between gap-3 shadow-md"
+              >
+                <div className="min-w-0 flex-1 space-y-1">
+                  <span
+                    className={`inline-flex items-center gap-1 rounded-full bg-gradient-to-r ${col.accentColor} px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-white`}
+                  >
+                    <span className="material-symbols-outlined text-[12px]">
+                      {col.icon}
+                    </span>
+                    {col.badge}
+                  </span>
+                  <h4 className="font-title-novel text-base font-bold text-on-surface group-hover:text-primary transition-colors truncate">
+                    {col.title}
+                  </h4>
+                  <p className="text-[11px] text-on-surface-variant line-clamp-1">
+                    {col.subtitle}
+                  </p>
+                  <p className="text-[10px] font-bold text-tertiary pt-0.5">
+                    {colBooks.length} Free Books &bull; Explore Shelf &rarr;
+                  </p>
+                </div>
+
+                {/* Stacked Book Covers Preview */}
+                <div className="flex -space-x-3 shrink-0 pr-1">
+                  {colBooks.slice(0, 3).map((b) =>
+                    b ? (
+                      <img
+                        key={b.id}
+                        src={b.coverUrl}
+                        alt={b.title}
+                        className="h-16 w-11 rounded-lg object-cover ring-2 ring-[#0b0f19] shadow-md"
+                      />
+                    ) : null
+                  )}
                 </div>
               </Link>
             );

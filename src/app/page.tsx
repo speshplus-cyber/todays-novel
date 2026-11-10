@@ -347,14 +347,14 @@ export default function HomePage() {
               </h3>
             </div>
             <p className="text-xs text-on-surface-variant pl-3">
-              {books.length} complete free novels organized into 6 thematic collections
+              {books.length} complete multi-chapter novels organized into {BOOK_COLLECTIONS.length} thematic collections
             </p>
           </div>
           <Link
             href="/collections"
             className="text-xs font-extrabold text-primary flex items-center space-x-0.5 hover:underline"
           >
-            <span>All 6 Collections</span>
+            <span>All {BOOK_COLLECTIONS.length} Collections</span>
             <span className="material-symbols-outlined text-[14px]">
               chevron_right
             </span>

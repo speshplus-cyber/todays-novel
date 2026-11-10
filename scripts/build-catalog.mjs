@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const GUTENBERG_BOOKS = [
-  // Existing Gutenberg IDs in our app (upgrade all to 10-12 full chapters!)
+  // Existing 31 Classics (12 chapters each)
   { id: 1342, slug: 'pride-and-prejudice', title: 'Pride and Prejudice', author: 'Jane Austen', genre: 'Romance', collectionId: 'col-romance-billionaire', views: '412K', rating: 4.9 },
   { id: 1184, slug: 'the-count-of-monte-cristo', title: 'The Count of Monte Cristo', author: 'Alexandre Dumas', genre: 'Drama', collectionId: 'col-revenge-mystery', views: '530K', rating: 5.0 },
   { id: 23, slug: 'narrative-of-the-life-of-frederick-douglass', title: 'Narrative of the Life of Frederick Douglass', author: 'Frederick Douglass', genre: 'Memoir & Faith', collectionId: 'col-faith-memoir', views: '310K', rating: 5.0 },
@@ -26,8 +26,6 @@ const GUTENBERG_BOOKS = [
   { id: 2680, slug: 'meditations', title: 'Meditations', author: 'Marcus Aurelius', genre: 'Memoir & Faith', collectionId: 'col-power-wisdom', views: '460K', rating: 5.0 },
   { id: 1232, slug: 'the-prince', title: 'The Prince', author: 'Niccolò Machiavelli', genre: 'Drama', collectionId: 'col-power-wisdom', views: '310K', rating: 4.8 },
   { id: 4507, slug: 'as-a-man-thinketh', title: 'As a Man Thinketh', author: 'James Allen', genre: 'Memoir & Faith', collectionId: 'col-power-wisdom', views: '390K', rating: 5.0 },
-
-  // Additional Popular Multi-Chapter Books to Add!
   { id: 120, slug: 'treasure-island', title: 'Treasure Island', author: 'Robert Louis Stevenson', genre: 'Fantasy', collectionId: 'col-scifi-voyages', views: '405K', rating: 4.9 },
   { id: 1257, slug: 'the-three-musketeers', title: 'The Three Musketeers', author: 'Alexandre Dumas', genre: 'Drama', collectionId: 'col-revenge-mystery', views: '375K', rating: 4.9 },
   { id: 175, slug: 'the-phantom-of-the-opera', title: 'The Phantom of the Opera', author: 'Gaston Leroux', genre: 'Romance', collectionId: 'col-dark-supernatural', views: '355K', rating: 4.9 },
@@ -35,7 +33,25 @@ const GUTENBERG_BOOKS = [
   { id: 215, slug: 'the-call-of-the-wild', title: 'The Call of the Wild', author: 'Jack London', genre: 'Drama', collectionId: 'col-scifi-voyages', views: '340K', rating: 4.9 },
   { id: 161, slug: 'sense-and-sensibility', title: 'Sense and Sensibility', author: 'Jane Austen', genre: 'Romance', collectionId: 'col-romance-billionaire', views: '295K', rating: 4.8 },
   { id: 131, slug: 'the-pilgrims-progress', title: 'The Pilgrim’s Progress', author: 'John Bunyan', genre: 'Memoir & Faith', collectionId: 'col-faith-memoir', views: '440K', rating: 5.0 },
-  { id: 10007, slug: 'carmilla', title: 'Carmilla', author: 'J. Sheridan Le Fanu', genre: 'Fantasy', collectionId: 'col-dark-supernatural', views: '280K', rating: 4.8 }
+  { id: 10007, slug: 'carmilla', title: 'Carmilla', author: 'J. Sheridan Le Fanu', genre: 'Fantasy', collectionId: 'col-dark-supernatural', views: '280K', rating: 4.8 },
+
+  // NEW COLLECTION 7: STAGE PLAYS & CLASSIC DRAMA (12 scenes/acts each)
+  { id: 1533, slug: 'macbeth', title: 'Macbeth', author: 'William Shakespeare', genre: 'Plays & Drama', collectionId: 'col-plays-african-drama', views: '485K', rating: 5.0 },
+  { id: 1522, slug: 'julius-caesar', title: 'Julius Caesar', author: 'William Shakespeare', genre: 'Plays & Drama', collectionId: 'col-plays-african-drama', views: '410K', rating: 4.9 },
+  { id: 1513, slug: 'romeo-and-juliet', title: 'Romeo and Juliet', author: 'William Shakespeare', genre: 'Plays & Drama', collectionId: 'col-plays-african-drama', views: '520K', rating: 5.0 },
+  { id: 1524, slug: 'hamlet', title: 'Hamlet, Prince of Denmark', author: 'William Shakespeare', genre: 'Plays & Drama', collectionId: 'col-plays-african-drama', views: '495K', rating: 5.0 },
+  { id: 1531, slug: 'othello', title: 'Othello, the Moor of Venice', author: 'William Shakespeare', genre: 'Plays & Drama', collectionId: 'col-plays-african-drama', views: '390K', rating: 4.9 },
+  { id: 1515, slug: 'the-merchant-of-venice', title: 'The Merchant of Venice', author: 'William Shakespeare', genre: 'Plays & Drama', collectionId: 'col-plays-african-drama', views: '360K', rating: 4.9 },
+  { id: 2542, slug: 'a-dolls-house', title: 'A Doll’s House', author: 'Henrik Ibsen', genre: 'Plays & Drama', collectionId: 'col-plays-african-drama', views: '310K', rating: 4.9 },
+  { id: 844, slug: 'the-importance-of-being-earnest', title: 'The Importance of Being Earnest', author: 'Oscar Wilde', genre: 'Plays & Drama', collectionId: 'col-plays-african-drama', views: '345K', rating: 4.9 },
+  { id: 3825, slug: 'pygmalion', title: 'Pygmalion', author: 'George Bernard Shaw', genre: 'Plays & Drama', collectionId: 'col-plays-african-drama', views: '290K', rating: 4.8 },
+
+  // NEW COLLECTION 8: POLITICAL SATIRE, FABLES & ALLEGORY (12 chapters each)
+  { id: 829, slug: 'gullivers-travels', title: 'Gulliver’s Travels', author: 'Jonathan Swift', genre: 'Satire & Allegory', collectionId: 'col-satire-allegory', views: '415K', rating: 4.9 },
+  { id: 1164, slug: 'the-iron-heel', title: 'The Iron Heel', author: 'Jack London', genre: 'Satire & Allegory', collectionId: 'col-satire-allegory', views: '260K', rating: 4.8 },
+  { id: 219, slug: 'heart-of-darkness', title: 'Heart of Darkness', author: 'Joseph Conrad', genre: 'Satire & Allegory', collectionId: 'col-satire-allegory', views: '370K', rating: 4.8 },
+  { id: 2130, slug: 'utopia', title: 'Utopia', author: 'Sir Thomas More', genre: 'Satire & Allegory', collectionId: 'col-satire-allegory', views: '285K', rating: 4.8 },
+  { id: 19942, slug: 'candide', title: 'Candide', author: 'Voltaire', genre: 'Satire & Allegory', collectionId: 'col-satire-allegory', views: '335K', rating: 4.9 }
 ];
 
 function extractChaptersFromText(rawText, slug, bookTitle, targetCount = 12) {
@@ -51,11 +67,10 @@ function extractChaptersFromText(rawText, slug, bookTitle, targetCount = 12) {
 
   body = body.replace(/\r\n/g, '\n').trim();
 
-  // Filter substantial story paragraphs (skip short TOC lines)
   const paragraphs = body
     .split(/\n\s*\n/)
     .map((p) => p.replace(/\n+/g, ' ').replace(/\s+/g, ' ').trim())
-    .filter((p) => p.length > 85 && !/^chapter\s+[ivxlcdm0-9]+$/i.test(p));
+    .filter((p) => p.length > 75 && !/^chapter\s+[ivxlcdm0-9]+$/i.test(p));
 
   const chapters = [];
   const parasPerChapter = 8;
@@ -70,7 +85,7 @@ function extractChaptersFromText(rawText, slug, bookTitle, targetCount = 12) {
       id: `${slug}-ch-${c + 1}`,
       number: c + 1,
       title: `Chapter ${c + 1} — ${bookTitle}`,
-      publishedAt: '2026-11-08',
+      publishedAt: '2026-11-09',
       wordCount,
       content
     });
@@ -86,13 +101,25 @@ async function fetchBookText(id) {
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const text = await res.text();
-  return text.slice(0, 140000);
+  return text.slice(0, 150000);
 }
 
 async function main() {
-  const chaptersBySlug = {};
+  const outPath = path.join(process.cwd(), 'src', 'data', 'multiChapterData.json');
+  let existing = { chaptersBySlug: {} };
+  if (fs.existsSync(outPath)) {
+    try {
+      existing = JSON.parse(fs.readFileSync(outPath, 'utf8'));
+    } catch {}
+  }
+
+  const chaptersBySlug = { ...existing.chaptersBySlug };
 
   for (const item of GUTENBERG_BOOKS) {
+    if (chaptersBySlug[item.slug] && chaptersBySlug[item.slug].length >= 10) {
+      console.log(`Cached #${item.id} (${item.title}): ${chaptersBySlug[item.slug].length} chapters.`);
+      continue;
+    }
     try {
       process.stdout.write(`Fetching #${item.id} (${item.title})... `);
       const raw = await fetchBookText(item.id);
@@ -100,13 +127,16 @@ async function main() {
       chaptersBySlug[item.slug] = chaps;
       console.log(`${chaps.length} chapters extracted.`);
     } catch (err) {
-      console.log(`Failed (${err.message}), generating fallback multi-chapters.`);
+      console.log(`Failed (${err.message}).`);
     }
   }
 
-  const outPath = path.join(process.cwd(), 'src', 'data', 'multiChapterData.json');
-  fs.writeFileSync(outPath, JSON.stringify({ chaptersBySlug, booksMeta: GUTENBERG_BOOKS }, null, 2), 'utf8');
-  console.log('Saved multiChapterData.json successfully.');
+  fs.writeFileSync(
+    outPath,
+    JSON.stringify({ chaptersBySlug, booksMeta: GUTENBERG_BOOKS }, null, 2),
+    'utf8'
+  );
+  console.log('Saved updated multiChapterData.json with 45 books.');
 }
 
 main();

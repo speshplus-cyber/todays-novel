@@ -38,15 +38,15 @@ export function buildMultiChaptersForStory(
 ): Chapter[] {
   const result: Chapter[] = [...seedChapters];
   const arcTitles = [
-    'Shadows Over the Sanctuary',
-    'The Midnight Pact',
-    'Echoes of the Forbidden Bond',
-    'Trial by Silver and Flame',
-    'Secrets Beneath the Estate',
+    'The Gathering Storm',
+    'Voices in the Courtyard',
+    'The Unspoken Pact',
+    'Trial of Conviction',
+    'Whispers Behind the Curtain',
     'The Reckoning at Dawn',
-    'Unbroken Vows',
-    'The Final Transformation',
-    'Crown of the New Era',
+    'Unbroken Resolve',
+    'The Turning of the Tide',
+    'A New Covenant',
     'Beyond the Horizon'
   ];
 
@@ -54,18 +54,18 @@ export function buildMultiChaptersForStory(
     const arcTitle = arcTitles[(num - 1) % arcTitles.length];
     const [p1, p2] = protagonists;
     const paragraphs = [
-      `Night settled over ${setting} as ${p1} stood beside the tall arched window, watching the silver mist roll across the courtyard. Every decision since the first encounter with ${p2} had led to this turning point, where loyalty and survival could no longer be separated.`,
-      `“You didn’t think I would let you face the council alone, did you?” ${p2}’s voice cut through the stillness from the doorway. Step by measured step, the tension in the room shifted from guarded suspicion to an unspoken alliance neither of them could deny.`,
-      `Across the mahogany table lay the sealed ledger that held the truth about their families’ past in ${setting}. For years, whispers and half-truths had kept them on opposite sides of the conflict, yet the ink on the parchment told a far deeper story of sacrifice and hidden protection.`,
-      `Outside, the distant bells chimed midnight. ${p1} reached for the seal, knowing that once the document was opened before the assembly, nothing in ${setting} would ever return to the way it was before.`,
-      `“Whatever happens when those doors open at sunrise,” ${p1} said quietly, meeting ${p2}’s gaze without flinching, “we finish this chapter on our own terms.”`
+      `Evening settled over ${setting} as ${p1} stood near the central archway, watching the lanterns flicker against the stone walls. Every choice since the first disagreement with ${p2} had led to this decisive hour, where conviction and community could no longer be separated.`,
+      `“You did not think I would let you address the elders alone, did you?” ${p2} said, stepping forward into the circle of light. Around them, the murmurs of the gathering quieted as everyone waited to hear what would be spoken next.`,
+      `On the carved wooden table rested the ledger that held the history of ${setting}. For seasons, competing ambitions and old customs had divided the household, yet the truth written across those pages pointed toward a path neither side had dared to walk.`,
+      `Outside, the evening drums echoed across the valley. ${p1} lifted the scroll, knowing that once the truth was declared before the assembly, nothing in ${setting} would ever return to the way it was before.`,
+      `“Whatever happens when sunrise comes,” ${p1} said clearly, meeting ${p2}’s gaze, “we stand by the truth we have built together.”`
     ];
     const content = paragraphs.join('\n\n');
     result.push({
       id: `${slug}-ch-${num}`,
       number: num,
       title: `Chapter ${num} — ${arcTitle}`,
-      publishedAt: '2026-11-08',
+      publishedAt: '2026-11-09',
       wordCount: content.split(/\s+/).length,
       content
     });
@@ -94,23 +94,69 @@ export const BOOK_COLLECTIONS: BookCollection[] = [
     ]
   },
   {
+    id: 'col-plays-african-drama',
+    slug: 'plays-african-and-world-drama',
+    title: 'Awa, African Stage Plays & Classic Drama',
+    subtitle: 'African theatrical plays, village comedies, and Shakespearean stage masterpieces (10–12 Chapters Each)',
+    description:
+      'Featuring Awa: The Voice of the Village and Cameroonian/African dramatic plays alongside complete multi-act stage masterpieces by Shakespeare, Ibsen, Wilde, and Shaw.',
+    badge: 'Stage & Drama Collection',
+    icon: 'theater_comedy',
+    accentColor: 'from-[#f59e0b] to-[#e11d48]',
+    bookSlugs: [
+      'awa-the-voice-of-the-village-play',
+      'three-suitors-in-the-grassfields-play',
+      'the-sacred-lake-and-the-palm-wine-council',
+      'macbeth',
+      'julius-caesar',
+      'romeo-and-juliet',
+      'hamlet',
+      'othello',
+      'the-merchant-of-venice',
+      'a-dolls-house',
+      'the-importance-of-being-earnest',
+      'pygmalion'
+    ]
+  },
+  {
+    id: 'col-satire-allegory',
+    slug: 'animal-fables-satire-and-allegory',
+    title: 'Animal Fables, Political Satire & Social Allegory',
+    subtitle: 'Allegorical farm rebellions, sharp political fables, and social commentary (10–12 Chapters Each)',
+    description:
+      'Explore our 10-chapter Companion & Allegorical Fable on the Manor Farm Rebellion alongside classic political satires and dystopian allegories by Swift, Jack London, Voltaire, Conrad, and Thomas More.',
+    badge: 'Satire & Allegory',
+    icon: 'balance',
+    accentColor: 'from-[#ef4444] to-[#10b981]',
+    bookSlugs: [
+      'animal-farm-allegory-and-companion',
+      'gullivers-travels',
+      'the-iron-heel',
+      'candide',
+      'heart-of-darkness',
+      'utopia'
+    ]
+  },
+  {
     id: 'col-dark-supernatural',
     slug: 'dark-gothic-supernatural',
-    title: 'Alpha Wolves, Gothic & Supernatural',
-    subtitle: 'Fated mates, immortal curses, and dark midnight legends (10–12 Chapters Each)',
+    title: 'Dark Romance, Cat & Mouse & Supernatural',
+    subtitle: 'Stalker thrillers, fated mates, and dark midnight legends (10–12 Chapters Each)',
     description:
-      'From multi-chapter Alpha werewolf romances to the foundational gothic masterpieces of vampires, phantom obsession, and supernatural mystery.',
+      'From our exclusive 10-chapter Dark Romance Cat & Mouse Duet (Haunting the Manor & Hunting the Syndicate) to Alpha werewolf romances and foundational gothic masterpieces of obsession.',
     badge: 'Trending Dark Reads',
     icon: 'nights_stay',
     accentColor: 'from-[#7c3aed] to-[#e11d48]',
     bookSlugs: [
+      'haunting-the-manor-the-stalkers-shadow',
+      'hunting-the-syndicate-the-vigilantes-vow',
       'his-alpha-queen',
       'mated-to-the-alpha-i-hate',
       'mated-to-the-twin-alphas',
-      'dracula',
-      'frankenstein',
       'the-phantom-of-the-opera',
       'carmilla',
+      'dracula',
+      'frankenstein',
       'the-picture-of-dorian-gray',
       'dr-jekyll-and-mr-hyde'
     ]
@@ -367,6 +413,90 @@ const SYNOPSES_BY_SLUG: Record<string, { subtitle: string; tagline: string; syno
     tagline: 'A man is literally what he thinks.',
     synopsis: 'James Allen’s beloved classic on rebuilding one’s habits, character, and destiny through disciplined thought.',
     tags: ['Mindset', 'Transformation', '12 Chapters', '100% Free']
+  },
+  macbeth: {
+    subtitle: 'Ambition, Prophecy, and the Crown of Scotland',
+    tagline: 'Something wicked this way comes.',
+    synopsis: 'Spurred by a three-fold prophecy on the heath and fierce ambition within Dunsinane Castle, Scottish general Macbeth seizes the throne at a devastating cost.',
+    tags: ['Shakespeare Play', 'Tragedy', '12 Chapters', '100% Free']
+  },
+  'julius-caesar': {
+    subtitle: 'Conspiracy, Eloquence, and the Fate of Rome',
+    tagline: 'Beware the Ides of March.',
+    synopsis: 'Brutus, Cassius, and Mark Antony clash over liberty, loyalty, and power in the Roman Senate.',
+    tags: ['Shakespeare Play', 'Political Drama', '12 Chapters', '100% Free']
+  },
+  'romeo-and-juliet': {
+    subtitle: 'Star-Crossed Lovers of Verona',
+    tagline: 'For never was a story of more woe than this of Juliet and her Romeo.',
+    synopsis: 'In fair Verona, the forbidden love between Romeo Montague and Juliet Capulet defies an ancient family blood feud.',
+    tags: ['Shakespeare Play', 'Tragic Romance', '12 Chapters', '100% Free']
+  },
+  hamlet: {
+    subtitle: 'The Prince of Denmark’s Quest for Truth and Vengeance',
+    tagline: 'To be, or not to be: that is the question.',
+    synopsis: 'Haunted by his father’s ghost on the battlements of Elsinore Castle, Prince Hamlet uncovers treachery at the heart of the Danish court.',
+    tags: ['Shakespeare Play', 'Masterpiece Drama', '12 Chapters', '100% Free']
+  },
+  othello: {
+    subtitle: 'Jealousy, Honor, and Betrayal in Venice and Cyprus',
+    tagline: 'O, beware, my lord, of jealousy; it is the green-eyed monster.',
+    synopsis: 'Noble general Othello’s devotion to Desdemona is poisoned by the relentless machinations of his ensign Iago.',
+    tags: ['Shakespeare Play', 'Tragedy', '12 Chapters', '100% Free']
+  },
+  'the-merchant-of-venice': {
+    subtitle: 'Mercy, Justice, and the Bond of Venice',
+    tagline: 'The quality of mercy is not strained.',
+    synopsis: 'When Antonio’s merchant ships are lost at sea, clever Portia enters the Venetian courtroom in disguise to confront Shylock’s bond.',
+    tags: ['Shakespeare Play', 'Courtroom Drama', '12 Chapters', '100% Free']
+  },
+  'a-dolls-house': {
+    subtitle: 'A Three-Act Stage Drama of Awakening and Freedom',
+    tagline: 'The slam of the door that echoed across modern theatre.',
+    synopsis: 'Nora Helmer confronts the suffocating illusions of her marriage to Torvald and chooses self-respect and independence.',
+    tags: ['Stage Play', 'Modern Drama', '12 Chapters', '100% Free']
+  },
+  'the-importance-of-being-earnest': {
+    subtitle: 'A Trivial Comedy for Serious People',
+    tagline: 'The truth is rarely pure and never simple.',
+    synopsis: 'Jack Worthing and Algernon Moncrieff invent fictitious alter-egos named “Ernest” to court Gwendolen and Cecily under the formidable gaze of Lady Bracknell.',
+    tags: ['Stage Play', 'Witty Comedy', '12 Chapters', '100% Free']
+  },
+  pygmalion: {
+    subtitle: 'A Five-Act Romance of Language, Class, and Identity',
+    tagline: 'The difference between a lady and a flower girl is not how she behaves, but how she’s treated.',
+    synopsis: 'Phonetics professor Henry Higgins wagers he can pass Cockney flower girl Eliza Doolittle off as a duchess at an ambassador’s garden party.',
+    tags: ['Stage Play', 'Social Comedy', '12 Chapters', '100% Free']
+  },
+  'gullivers-travels': {
+    subtitle: 'Voyages to Lilliput, Brobdingnag, and Beyond',
+    tagline: 'A biting political satire disguised as an extraordinary voyage.',
+    synopsis: 'Ship’s surgeon Lemuel Gulliver encounters miniature empires, towering giants, and talking horses in Jonathan Swift’s immortal political satire.',
+    tags: ['Political Satire', 'Allegory', '12 Chapters', '100% Free']
+  },
+  'the-iron-heel': {
+    subtitle: 'The Classic Dystopian Novel of Oligarchy and Resistance',
+    tagline: 'A visionary political novel that inspired generations of social allegory.',
+    synopsis: 'Through the discovered manuscript of Avis Everhard, Jack London chronicles the rise of a ruthless oligarchy and the struggle for human liberty.',
+    tags: ['Political Allegory', 'Dystopian', '12 Chapters', '100% Free']
+  },
+  'heart-of-darkness': {
+    subtitle: 'A Journey Up the Congo River Into the Shadow of Empire',
+    tagline: 'We live, as we dream—alone.',
+    synopsis: 'Steamship captain Charles Marlow voyages deep into the African interior in search of the enigmatic ivory trader Kurtz.',
+    tags: ['Allegory', 'Empire & Conscience', '12 Chapters', '100% Free']
+  },
+  utopia: {
+    subtitle: 'Concerning the Best State of a Commonwealth',
+    tagline: 'The foundational work of political philosophy and social satire.',
+    synopsis: 'Traveler Raphael Hythloday describes the customs, communal laws, and philosophical paradoxes of the island nation of Utopia.',
+    tags: ['Political Satire', 'Philosophy', '7 Chapters', '100% Free']
+  },
+  candide: {
+    subtitle: 'Or, Optimism — A Satirical Philosophical Tale',
+    tagline: 'We must cultivate our garden.',
+    synopsis: 'Young Candide’s sheltered belief that “all is for the best in the best of all possible worlds” is tested by war, shipwreck, and hypocrisy across the globe.',
+    tags: ['Satire', 'Wit & Philosophy', '12 Chapters', '100% Free']
   }
 };
 
@@ -383,33 +513,279 @@ const rawMeta = (multiChapterData as {
   }[];
 }).booksMeta;
 
-export const SCRAPED_COLLECTION_BOOKS: Book[] = rawMeta
-  .filter((m) => m.slug !== 'pride-and-prejudice' && m.slug !== 'the-count-of-monte-cristo')
-  .map((m) => {
-    const info = SYNOPSES_BY_SLUG[m.slug] || {
-      subtitle: 'Complete Multi-Chapter Edition',
-      tagline: `A timeless masterpiece by ${m.author}.`,
-      synopsis: `Complete 12-chapter free edition of ${m.title} by ${m.author}.`,
-      tags: [m.genre, '12 Chapters', '100% Free']
-    };
+const ORIGINAL_AFRICAN_PLAYS_AND_FABLES: Book[] = [
+  {
+    id: 'play-awa-voice-of-the-village',
+    slug: 'awa-the-voice-of-the-village-play',
+    title: 'Awa: The Voice of the Village (Stage Play)',
+    subtitle: 'A 10-Scene African Stage Drama of Tradition, Marriage, and Self-Determination',
+    tagline: 'A daughter who refuses to be traded for titles becomes the conscience of her land.',
+    author: 'Cameroon & West African Stage Ensemble',
+    coverUrl: 'https://www.gutenberg.org/cache/epub/2542/pg2542.cover.medium.jpg',
+    genre: 'Drama',
+    tags: ['African Play', 'Awa Drama', '10 Scenes', '100% Free'],
+    rating: 5.0,
+    views: '285K',
+    status: 'Completed',
+    isFree: true,
+    source: 'original',
+    synopsis:
+      'Set in a vibrant West and Central African market town, spirited young Awa challenges the arranged bride-price compact brokered by the village council, sparking a ten-scene theatrical drama of family honor, wisdom, and liberation.',
+    chapters: buildMultiChaptersForStory(
+      'awa-the-voice-of-the-village-play',
+      'Awa: The Voice of the Village',
+      ['Awa', 'Elder Kofi & Mother Efua'],
+      'the Royal Courtyard of Oguaa & the Market Square',
+      [
+        {
+          id: 'awa-play-1',
+          number: 1,
+          title: 'Scene 1 — The Courtyard Lanterns at Dusk',
+          publishedAt: '2026-11-09',
+          wordCount: 460,
+          content: `[SCENE I: The open courtyard of Elder Kofi’s compound at sunset. Clay pots of palm oil glow beside the carved veranda posts. Mother Efua arranges woven mats while distant talking drums announce the evening market.]\n\nMOTHER EFUA: Six harvest seasons have passed since the wealthy merchants first sent their messengers to our gate, Awa. Still you walk to the stream with your head held like a crowned queen who answers to no council.\n\nAWA: (Setting down her brass water vessel and smiling) Mother, did you not teach me yourself that a woman’s mind is not a sack of cocoa to be weighed on a stranger’s scale? If I marry, let it be a partner who walks beside me in the sun, not a lord who locks my voice inside his compound.\n\nELDER KOFI: (Entering with his carved walking staff) Careful, my daughter. The elders gather under the baobab tree tonight, and your name is the first matter on their tongues.`
+        }
+      ],
+      10
+    ),
+    reviews: []
+  },
+  {
+    id: 'play-three-suitors-grassfields',
+    slug: 'three-suitors-in-the-grassfields-play',
+    title: 'Three Suitors in the Grassfields (Stage Comedy)',
+    subtitle: 'A 10-Scene Cameroonian Village Play of Wit, Bride-Price, and Education',
+    tagline: 'Three wealthy suitors, one village council, and a brilliant student with a plan of her own.',
+    author: 'Grassfields Theatre Collective',
+    coverUrl: 'https://www.gutenberg.org/cache/epub/844/pg844.cover.medium.jpg',
+    genre: 'Drama',
+    tags: ['Cameroon Play', 'Stage Comedy', '10 Scenes', '100% Free'],
+    rating: 4.9,
+    views: '240K',
+    status: 'Completed',
+    isFree: true,
+    source: 'original',
+    synopsis:
+      'When young scholar Lum returns home to her highland village from college, her family has already accepted bride-price gifts from a local farmer, a city civil servant, and a boastful trader—setting off a hilarious ten-scene theatrical showdown.',
+    chapters: buildMultiChaptersForStory(
+      'three-suitors-in-the-grassfields-play',
+      'Three Suitors in the Grassfields',
+      ['Lum', 'Chief Atangana'],
+      'the Highland Palaver House',
+      [
+        {
+          id: 'tsg-play-1',
+          number: 1,
+          title: 'Scene 1 — The Palaver House Veranda',
+          publishedAt: '2026-11-09',
+          wordCount: 440,
+          content: `[SCENE I: Midday in a lively Cameroonian village courtyard. Raffia chairs surround a low table bearing calabashes of palm-wine. Grandfather Mbarga counts three separate envelopes on his fingers.]\n\nGRANDFATHER MBARGA: One hundred thousand from the cocoa planter! Two hundred thousand from the sub-prefecture clerk in Yaoundé! And a brand-new radio plus three goats from the merchant! Never in the history of our village has a Secondary School diploma produced such arithmetic!\n\nLUM: (Stepping onto the veranda with her leather book-bag) Grandfather, a diploma is meant to open schools and clinics for our people—not to turn your granddaughter into an auction lot at the village market!`
+        }
+      ],
+      10
+    ),
+    reviews: []
+  },
+  {
+    id: 'play-sacred-lake-palm-wine',
+    slug: 'the-sacred-lake-and-the-palm-wine-council',
+    title: 'The Sacred Lake & The Palm-Wine Council (Play)',
+    subtitle: 'A 10-Scene Highlands Drama of Royal Accountability and Community Justice',
+    tagline: 'When the palace forgets the people, the women and the earth speak.',
+    author: 'Bamenda Dramatic Society',
+    coverUrl: 'https://www.gutenberg.org/cache/epub/1522/pg1522.cover.medium.jpg',
+    genre: 'Drama',
+    tags: ['Cameroon Drama', 'Stage Play', '10 Scenes', '100% Free'],
+    rating: 4.9,
+    views: '215K',
+    status: 'Completed',
+    isFree: true,
+    source: 'original',
+    synopsis:
+      'In the misty highlands, a sacred crater lake and the traditional women’s council stand at the center of a powerful ten-scene stage drama about stewardship, truth, and renewal.',
+    chapters: buildMultiChaptersForStory(
+      'the-sacred-lake-and-the-palm-wine-council',
+      'The Sacred Lake & The Palm-Wine Council',
+      ['Priestess Bih', 'Fon Nfor'],
+      'the Misty Crater Lake Sanctuary',
+      [
+        {
+          id: 'slp-play-1',
+          number: 1,
+          title: 'Scene 1 — Dawn Over the Crater Lake',
+          publishedAt: '2026-11-09',
+          wordCount: 430,
+          content: `[SCENE I: Dawn mist rises over the sacred highland lake. Priestess Bih stands with the elders holding a peace plant as the palace messengers approach along the ridge.]\n\nPRIESTESS BIH: Tell the palace that the land is not an inheritance from our ancestors alone—it is a loan we hold in trust for our children. Let the council hear the voice of the farmers before the sun reaches the summit.`
+        }
+      ],
+      10
+    ),
+    reviews: []
+  },
+  {
+    id: 'fable-animal-farm-companion',
+    slug: 'animal-farm-allegory-and-companion',
+    title: 'Animal Farm: The Manor Rebellion (10-Chapter Fable & Study Guide)',
+    subtitle: 'Complete 10-Chapter Political Fable, Chapter-by-Chapter Analysis & Allegorical Guide',
+    tagline: 'How a dream of equality in the barn slowly turned into a mirror of the old masters.',
+    author: 'Literary Classics & Allegory Press',
+    coverUrl: 'https://www.gutenberg.org/cache/epub/829/pg829.cover.medium.jpg',
+    genre: 'Drama',
+    tags: ['Animal Farm', 'Political Fable', '10 Chapters', '100% Free'],
+    rating: 5.0,
+    views: '610K',
+    status: 'Completed',
+    isFree: true,
+    source: 'original',
+    synopsis:
+      'A comprehensive 10-chapter allegorical narrative and literary study companion exploring the Manor Farm uprising: from the old prize boar’s midnight speech and the Seven Commandments on the barn wall, to the struggle over the windmill, the tireless cart-horse’s devotion, and the final banquet where power comes full circle.',
+    chapters: buildMultiChaptersForStory(
+      'animal-farm-allegory-and-companion',
+      'Animal Farm: The Manor Rebellion',
+      ['Clover & the Faithful Workhorse', 'the Barn Directorate'],
+      'the Manor Barn & Windmill Hill',
+      [
+        {
+          id: 'af-1',
+          number: 1,
+          title: 'Chapter 1 — The Midnight Assembly in the Great Barn',
+          publishedAt: '2026-11-09',
+          wordCount: 520,
+          content: `As soon as the light in the farmhouse bedroom flickered out, word travelled through every stall and hen-house that the venerable prize boar had summoned a secret assembly in the great barn. One by one, the creatures of the estate gathered on the straw—the towering workhorses with their patient strength, the cynical donkey who rarely spoke, the white mare admiring her ribbons, and the rows of hens perched along the rafters.\n\nFrom the raised platform at the end of the barn, the elder boar spoke of a vision in which those who ploughed the soil and harvested the grain would no longer surrender the fruits of their labour to an idle master. He warned them, however, of one cardinal rule that must never be forgotten: even if they achieved their freedom, they must never adopt the vices, beds, or tyrannical habits of the old proprietor.\n\nIn this opening chapter of our 10-part allegorical study, we examine how revolutionary ideals begin with genuine solidarity and hope—yet carry the seeds of future corruption when literacy, critical thinking, and shared accountability are neglected.`
+        },
+        {
+          id: 'af-2',
+          number: 2,
+          title: 'Chapter 2 — The Uprising & The Seven Laws on the Tarred Wall',
+          publishedAt: '2026-11-09',
+          wordCount: 510,
+          content: `When Midsummer Eve arrived and the neglect of the farm reached its breaking point, the hungry livestock broke through the store-shed doors and drove the neglectful overseers beyond the main gate along the country lane. By sunrise, the estate belonged entirely to its workers.\n\nIn the euphoria of that first morning, the cleverest speakers climbed a ladder with white paint and inscribed seven foundational laws across the tarred end of the big barn—declaring unbreakable fellowship and absolute equality for every creature on the farm.\n\nYet even on that first afternoon, when buckets of fresh milk vanished while the others were harvesting the hayfields, the first quiet privilege had already been claimed by the new leadership class.`
+        },
+        {
+          id: 'af-3',
+          number: 3,
+          title: 'Chapter 3 — The Windmill Debate & The Hounds of Power',
+          publishedAt: '2026-11-09',
+          wordCount: 510,
+          content: `As winter approached, chalk diagrams of a grand stone windmill covered the floor of the incubator shed. One faction promised that electrical power would warm the stalls and reduce the working week to three days; the rival faction argued for stockpiling grain and consolidating discipline.\n\nWhen the day of the great vote arrived in the barn, the debate was not settled by persuasion or ballots. Instead, nine collar-clad hounds—raised in secret in the loft since they were pups—bounded into the assembly and chased the chief architect of the windmill through the hedge, ending open democracy on the farm forever.`
+        }
+      ],
+      10
+    ),
+    reviews: []
+  },
+  {
+    id: 'novel-haunting-the-manor',
+    slug: 'haunting-the-manor-the-stalkers-shadow',
+    title: 'Haunting the Manor: The Stalker’s Shadow',
+    subtitle: 'Book 1 of the Cat & Mouse Dark Romance Duet',
+    tagline: 'He lives in her shadows, watches her every move, and kills anyone who threatens her.',
+    author: 'Midnight Gothic & Dark Romance Collective',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDRty9PXp0k3GH8HtkVO-5mA88r94T74X-sNWO1azxqcQiQQ761u1ZzoWWNvvD68ZtQvMOUhZvtCSIYaXlJNioCYUVnEhUCo0BL25YRQirV2VSA4AM5lfiqzLbXMRmgxR4gZ22wpZoTwSRvmFBDJ81r7KJs1iV8byqX0CAujvzkmDdQzCdtNMtPMUxn8atSKW6Qe8O546d26GCbXiWmOXMlQoAIxkZuMMP3FLhJ2vM',
+    genre: 'Drama',
+    tags: ['Dark Romance', 'Cat & Mouse', 'Stalker Thriller', '10 Chapters', '100% Free'],
+    rating: 4.9,
+    views: '480K',
+    status: 'Completed',
+    isFree: true,
+    source: 'original',
+    synopsis:
+      'Inspired by the high-stakes thrills of modern dark romance, author Elena inherits her grandmother’s secluded coastal manor, unaware that a shadowy vigilante has made the estate his hunting ground. As strange rose petals and midnight messages appear on her bedside table, a terrifying cat-and-mouse obsession ignites between predator and muse.',
+    chapters: buildMultiChaptersForStory(
+      'haunting-the-manor-the-stalkers-shadow',
+      'Haunting the Manor: The Stalker’s Shadow',
+      ['Elena', 'Zane the Shadow Watcher'],
+      'Parsons Cliff Manor and the Midnight Woods',
+      [
+        {
+          id: 'htm-1',
+          number: 1,
+          title: 'Chapter 1 — The Shadow on Parsons Cliff',
+          publishedAt: '2026-11-09',
+          wordCount: 520,
+          content: `The wrought-iron gates of Parsons Cliff groaned against the ocean wind as I cut the engine. The Victorian manor stood perched above the jagged black rocks like a solitary sentinel waiting for a storm.\n\nMy grandmother had left me this house along with a warning written on brittle parchment: *Never leave the terrace doors unbolted after midnight, Elena. The cliffs have eyes, and the darkness here is not empty.*\n\nInside, the smell of aged cedar and dust hung heavy in the high-ceilinged foyer. As I unpacked my manuscripts in the library, I noticed the heavy velvet curtains beside the French windows swaying gently. On the mahogany sill lay a single dried black rose tied with crimson twine—and a handwritten note in sharp, elegant calligraphy:\n\n*Welcome home, little mouse. I have waited three years for you to take your place in my sanctuary.*`
+        },
+        {
+          id: 'htm-2',
+          number: 2,
+          title: 'Chapter 2 — Footsteps in the Wall',
+          publishedAt: '2026-11-09',
+          wordCount: 490,
+          content: `Sleep was impossible. Every floorboard creaked in rhythm with the crashing tide below. At three in the morning, the sound began—not outside in the gardens, but behind the oak panels of my dressing room.\n\nA hollow click. The scrape of leather against stone.\n\nI gripped the brass candlestick from my nightstand and approached the wall. When I pressed my palm against the wood, it was warm to the touch. A voice, low and gravelly, vibrated through the hairline seam:\n\n“Put down the candle, Elena. You cannot hurt a ghost that has kept you breathing since you stepped foot into this county.”`
+        }
+      ],
+      10
+    ),
+    reviews: []
+  },
+  {
+    id: 'novel-hunting-the-syndicate',
+    slug: 'hunting-the-syndicate-the-vigilantes-vow',
+    title: 'Hunting the Syndicate: The Vigilante’s Vow',
+    subtitle: 'Book 2 of the Cat & Mouse Dark Romance Duet',
+    tagline: 'When the hunters become the hunted, retribution is the only mercy left.',
+    author: 'Midnight Gothic & Dark Romance Collective',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDzA11LAoulaKpPV-ayHRRYMJTJEavyj2nUp0zApySe1eWFrD4b9SoiMvNj2fKY3KrSqkylpceIWyYY5Jmj03K1aksU8u3Z8xNHMSzRMJ2hLfCeel64VnaObZy2zBD4EAvSnI-5upE6rx-Ztxx9sMOTceY9BzGplzm4ZiQJ8uLccUup0Quv0fxZoX61v94Ya3SZWsI6CYP0TgcPiJH97ajQMO_1f0Y3H4K_lwnd24c',
+    genre: 'Drama',
+    tags: ['Dark Romance', 'Vigilante Retribution', 'Cat & Mouse', '10 Chapters', '100% Free'],
+    rating: 5.0,
+    views: '515K',
+    status: 'Completed',
+    isFree: true,
+    source: 'original',
+    synopsis:
+      'In the explosive conclusion of the Cat and Mouse duet, the corrupt syndicate that targeted Elena’s family is finally uncovered. Zane steps out of the shadows to wage a brutal, unyielding war against her captors, proving that his obsession is not a cage, but her fiercest shield.',
+    chapters: buildMultiChaptersForStory(
+      'hunting-the-syndicate-the-vigilantes-vow',
+      'Hunting the Syndicate: The Vigilante’s Vow',
+      ['Elena', 'Zane'],
+      'the Underground Vaults and the Waterfront Docks',
+      [
+        {
+          id: 'hts-1',
+          number: 1,
+          title: 'Chapter 1 — Out of the Shadows',
+          publishedAt: '2026-11-09',
+          wordCount: 510,
+          content: `For months, he had been a phantom in the peripheral vision of my life—a silhouette on the tree line, a hand guiding me out of danger when the syndicate’s enforcers raided the town.\n\nNow he stood directly before me under the warehouse floodlights, dressed in black tactical gear with silver rings adorning his bruised knuckles. His amber eyes bore into mine with an intensity that burned the air between us.\n\n“The game of hide and seek is over, Elena,” Zane murmured, his voice sending a shiver down my spine. “They took you from my territory. That means they signed their own death warrant.”\n\n“I don’t need an executioner, Zane,” I breathed, refusing to look away.\n\nHe stepped closer until his chest pressed against mine. “You don’t have an executioner, little mouse. You have me.”`
+        }
+      ],
+      10
+    ),
+    reviews: []
+  }
+];
 
-    return {
-      id: `gutenberg-${m.id}`,
-      slug: m.slug,
-      title: m.title,
-      subtitle: info.subtitle,
-      tagline: info.tagline,
-      author: m.author,
-      coverUrl: `https://www.gutenberg.org/cache/epub/${m.id}/pg${m.id}.cover.medium.jpg`,
-      genre: m.genre,
-      tags: info.tags,
-      rating: m.rating,
-      views: m.views,
-      status: 'Completed',
-      isFree: true,
-      source: 'gutenberg',
-      synopsis: info.synopsis,
-      chapters: getMultiChaptersForSlug(m.slug),
-      reviews: []
-    };
-  });
+export const SCRAPED_COLLECTION_BOOKS: Book[] = [
+  ...ORIGINAL_AFRICAN_PLAYS_AND_FABLES,
+  ...rawMeta
+    .filter((m) => m.slug !== 'pride-and-prejudice' && m.slug !== 'the-count-of-monte-cristo')
+    .map((m) => {
+      const info = SYNOPSES_BY_SLUG[m.slug] || {
+        subtitle: 'Complete Multi-Chapter Edition',
+        tagline: `A timeless masterpiece by ${m.author}.`,
+        synopsis: `Complete 12-chapter free edition of ${m.title} by ${m.author}.`,
+        tags: [m.genre, '12 Chapters', '100% Free']
+      };
+
+      return {
+        id: `gutenberg-${m.id}`,
+        slug: m.slug,
+        title: m.title,
+        subtitle: info.subtitle,
+        tagline: info.tagline,
+        author: m.author,
+        coverUrl: `https://www.gutenberg.org/cache/epub/${m.id}/pg${m.id}.cover.medium.jpg`,
+        genre: m.genre,
+        tags: info.tags,
+        rating: m.rating,
+        views: m.views,
+        status: 'Completed' as const,
+        isFree: true,
+        source: 'gutenberg' as const,
+        synopsis: info.synopsis,
+        chapters: getMultiChaptersForSlug(m.slug),
+        reviews: []
+      };
+    })
+];

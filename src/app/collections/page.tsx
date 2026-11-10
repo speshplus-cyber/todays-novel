@@ -18,6 +18,8 @@ interface ScrapedResult {
 
 const COLLECTION_GENRE_MAP: Record<string, string> = {
   'col-faith-memoir': 'Memoir & Faith',
+  'col-plays-african-drama': 'Plays & Drama',
+  'col-satire-allegory': 'Satire & Allegory',
   'col-dark-supernatural': 'Fantasy',
   'col-romance-billionaire': 'Romance',
   'col-revenge-mystery': 'Drama',
@@ -158,7 +160,7 @@ export default function CollectionsPage() {
               <span className="material-symbols-outlined text-[13px]">
                 collections_bookmark
               </span>
-              6 Curated Free Collections • {books.length} Complete Books
+              {BOOK_COLLECTIONS.length} Curated Free Collections • {books.length} Multi-Chapter Books
             </span>
             <h1 className="font-title-novel text-2xl sm:text-3xl font-bold text-on-surface">
               Top Free Books by Collection
@@ -323,7 +325,7 @@ export default function CollectionsPage() {
               : 'bg-surface-container border border-surface-variant text-on-surface-variant hover:text-on-surface'
           }`}
         >
-          All 6 Collections ({books.length} Books)
+          All {BOOK_COLLECTIONS.length} Collections ({books.length} Books)
         </button>
         {BOOK_COLLECTIONS.map((col) => (
           <button

@@ -49,6 +49,8 @@ export interface Book {
 export const GENRES = [
   'Discover',
   'Memoir & Faith',
+  'Plays & Drama',
+  'Satire & Allegory',
   'Romance',
   'Werewolf',
   'Billionaire',

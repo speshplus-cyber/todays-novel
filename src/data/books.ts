@@ -1,4 +1,8 @@
-import { SCRAPED_COLLECTION_BOOKS } from './freeCollections';
+import {
+  SCRAPED_COLLECTION_BOOKS,
+  getMultiChaptersForSlug,
+  buildMultiChaptersForStory
+} from './freeCollections';
 
 export interface Chapter {
   id: string;
@@ -1261,16 +1265,23 @@ The final word is not survival. It is transformation.`
     synopsis:
       'Amidst a dark moonlit pine forest, a regal werewolf queen with glowing amber eyes reclaims her birthright and commands the loyalty of the northern packs.',
     source: 'custom',
-    chapters: [
-      {
-        id: 'haq-1',
-        number: 1,
-        title: 'Chapter 1 — The Silver Crown',
-        publishedAt: '2026-11-01',
-        wordCount: 410,
-        content: `The pine needles were coated in frost as the northern packs gathered beneath the full moon. For seven winters they believed the royal bloodline had been extinguished.\n\nThey were wrong.\n\nStepping out from the shadow of the ancient watchtower, Lyra let her cloak fall. The mark of the Alpha Queen burned silver against her collarbone, and the entire forest fell silent.`
-      }
-    ],
+    chapters: buildMultiChaptersForStory(
+      'his-alpha-queen',
+      'His Alpha Queen',
+      ['Lyra', 'Alpha Alaric'],
+      'the Northern Silver Packlands',
+      [
+        {
+          id: 'haq-1',
+          number: 1,
+          title: 'Chapter 1 — The Silver Crown',
+          publishedAt: '2026-11-01',
+          wordCount: 410,
+          content: `The pine needles were coated in frost as the northern packs gathered beneath the full moon. For seven winters they believed the royal bloodline had been extinguished.\n\nThey were wrong.\n\nStepping out from the shadow of the ancient watchtower, Lyra let her cloak fall. The mark of the Alpha Queen burned silver against her collarbone, and the entire forest fell silent.`
+        }
+      ],
+      10
+    ),
     reviews: []
   },
   {
@@ -1282,7 +1293,7 @@ The final word is not survival. It is transformation.`
     coverUrl:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuDzA11LAoulaKpPV-ayHRRYMJTJEavyj2nUp0zApySe1eWFrD4b9SoiMvNj2fKY3KrSqkylpceIWyYY5Jmj03K1aksU8u3Z8xNHMSzRMJ2hLfCeel64VnaObZy2zBD4EAvSnI-5upE6rx-Ztxx9sMOTceY9BzGplzm4ZiQJ8uLccUup0Quv0fxZoX61v94Ya3SZWsI6CYP0TgcPiJH97ajQMO_1f0Y3H4K_lwnd24c',
     genre: 'Werewolf',
-    tags: ['Werewolf', 'Enemies', '100% Free'],
+    tags: ['Werewolf', 'Enemies', '10 Chapters', '100% Free'],
     rating: 4.9,
     views: '198K',
     status: 'Ongoing',
@@ -1290,16 +1301,23 @@ The final word is not survival. It is transformation.`
     synopsis:
       'Under a crimson eclipse, two rival wolf shifters bound by centuries of pack feud discover a mate bond neither can sever.',
     source: 'custom',
-    chapters: [
-      {
-        id: 'mta-1',
-        number: 1,
-        title: 'Chapter 1 — The Crimson Eclipse',
-        publishedAt: '2026-11-02',
-        wordCount: 390,
-        content: `The border treaty was supposed to bring peace between our territories. Instead, the moment Kaelen’s hand closed around mine for the blood oath, the eclipse turned the sky ruby red—and the mate bond snapped into place.`
-      }
-    ],
+    chapters: buildMultiChaptersForStory(
+      'mated-to-the-alpha-i-hate',
+      'Mated to the Alpha I Hate',
+      ['Sienna', 'Alpha Kaelen'],
+      'the Crimson Eclipse Border',
+      [
+        {
+          id: 'mta-1',
+          number: 1,
+          title: 'Chapter 1 — The Crimson Eclipse',
+          publishedAt: '2026-11-02',
+          wordCount: 390,
+          content: `The border treaty was supposed to bring peace between our territories. Instead, the moment Kaelen’s hand closed around mine for the blood oath, the eclipse turned the sky ruby red—and the mate bond snapped into place.`
+        }
+      ],
+      10
+    ),
     reviews: []
   },
   {
@@ -1311,7 +1329,7 @@ The final word is not survival. It is transformation.`
     coverUrl:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuDgZ8kQv5tv_0Gertkirbta6PsjBLYfKvIiXOsd3LX__6cuzKh0lYkn2b1yNOJYIiuoSq_CKh_1zYTEAoVtpzXMfKuQGO0XyJ246K_viFoQjimIasoT7q7GvLGp0vx6ezTeu5E3rY6OmKLhaea7ObrnzgJYJfE7JwRCn6iWL9tvJJS8mxs0rz-W0A8IedeFC6oTS3wK-CsDpshk8khfgopA0aUCY_E7pY35Dw2s-e0',
     genre: 'Fantasy',
-    tags: ['Fantasy', 'Luna', '100% Free'],
+    tags: ['Fantasy', 'Luna', '10 Chapters', '100% Free'],
     rating: 4.7,
     views: '113.3K',
     status: 'Completed',
@@ -1319,16 +1337,23 @@ The final word is not survival. It is transformation.`
     synopsis:
       'Outcast for having no wolf spirit of her own, she is summoned before the colossal shadow sovereign—only to discover her quiet heart holds the ancient magic his kingdom lost.',
     source: 'custom',
-    chapters: [
-      {
-        id: 'akwl-1',
-        number: 1,
-        title: 'Chapter 1 — The Girl Without a Wolf',
-        publishedAt: '2026-11-03',
-        wordCount: 420,
-        content: `Every eighteen-year-old in the Silver Vale shifted on the night of the solstice. Every single one except me. Yet when the Alpha King’s carriage arrived at dawn, it was my name written on the royal summons.`
-      }
-    ],
+    chapters: buildMultiChaptersForStory(
+      'the-alpha-king-and-his-wolfless-luna',
+      'The Alpha King And His Wolfless Luna',
+      ['Aria', 'King Damon'],
+      'the Shadow Citadel of Silver Vale',
+      [
+        {
+          id: 'akwl-1',
+          number: 1,
+          title: 'Chapter 1 — The Girl Without a Wolf',
+          publishedAt: '2026-11-03',
+          wordCount: 420,
+          content: `Every eighteen-year-old in the Silver Vale shifted on the night of the solstice. Every single one except me. Yet when the Alpha King’s carriage arrived at dawn, it was my name written on the royal summons.`
+        }
+      ],
+      10
+    ),
     reviews: []
   },
   {
@@ -1340,7 +1365,7 @@ The final word is not survival. It is transformation.`
     coverUrl:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuDRty9PXp0k3GH8HtkVO-5mA88r94T74X-sNWO1azxqcQiQQ761u1ZzoWWNvvD68ZtQvMOUhZvtCSIYaXlJNioCYUVnEhUCo0BL25YRQirV2VSA4AM5lfiqzLbXMRmgxR4gZ22wpZoTwSRvmFBDJ81r7KJs1iV8byqX0CAujvzkmDdQzCdtNMtPMUxn8atSKW6Qe8O546d26GCbXiWmOXMlQoAIxkZuMMP3FLhJ2vM',
     genre: 'Romance',
-    tags: ['Rejected', 'Wedding', 'Psychological Romance'],
+    tags: ['Rejected', 'Wedding', '10 Chapters', 'Psychological Romance'],
     rating: 4.8,
     views: '92.4K',
     status: 'Completed',
@@ -1348,16 +1373,23 @@ The final word is not survival. It is transformation.`
     synopsis:
       'He bought her family debts and held her in his ivory estate, yet on the eve of her arranged wedding, every secret between them shattered.',
     source: 'custom',
-    chapters: [
-      {
-        id: 'ends-1',
-        number: 1,
-        title: 'Chapter 1 — The Ivory Estate',
-        publishedAt: '2026-11-04',
-        wordCount: 380,
-        content: `The chandelier above the grand staircase chimed in the midnight draft. On the marble floor lay the veil I was supposed to wear at dawn, surrounded by crimson rose petals and the truth Julian had hidden for three years.`
-      }
-    ],
+    chapters: buildMultiChaptersForStory(
+      'ends',
+      'ENDS',
+      ['claire', 'Julian Vance'],
+      'the Ivory Estate',
+      [
+        {
+          id: 'ends-1',
+          number: 1,
+          title: 'Chapter 1 — The Ivory Estate',
+          publishedAt: '2026-11-04',
+          wordCount: 380,
+          content: `The chandelier above the grand staircase chimed in the midnight draft. On the marble floor lay the veil I was supposed to wear at dawn, surrounded by crimson rose petals and the truth Julian had hidden for three years.`
+        }
+      ],
+      10
+    ),
     reviews: []
   },
   {
@@ -1369,7 +1401,7 @@ The final word is not survival. It is transformation.`
     coverUrl:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuDla4inEwAbKW8SNL5tNZztqCGUMLHzGuLoFk9PvIh9mgQmd2rXqQIDKJ7TE15PB029uSr8eCX6Y0kedOjUh0wExN-UuhvMFmGhJnYuG7XTDebZMSyHJOBi-8e9LhOYYFpBuSyLySGFDsj7n_-gNqfH__XRXNbUXAugZDVYtclNmPW_vTHQltVKI_51I-DGN8osSDwQASFkrBOcAxqKYUpSstVjpoHu9Qj0e0mGNrg',
     genre: 'Werewolf',
-    tags: ['Fresh Release', 'Twin Alphas', '100% Free'],
+    tags: ['Fresh Release', 'Twin Alphas', '10 Chapters', '100% Free'],
     rating: 4.9,
     views: '74.1K',
     status: 'Ongoing',
@@ -1377,16 +1409,23 @@ The final word is not survival. It is transformation.`
     synopsis:
       'Two cursed leaders, one sacred mate bond neither is willing to share until an ancient enemy strikes at the heart of their pack.',
     source: 'custom',
-    chapters: [
-      {
-        id: 'mtta-1',
-        number: 1,
-        title: 'Chapter 1 — Double Bond',
-        publishedAt: '2026-11-05',
-        wordCount: 350,
-        content: `No wolf in recorded history had ever drawn two silver threads from the Moon Goddess. Yet as the twin brothers stepped into the clearing, both of their eyes blazed gold.`
-      }
-    ],
+    chapters: buildMultiChaptersForStory(
+      'mated-to-the-twin-alphas',
+      'Mated to the Twin Alphas',
+      ['Elena', 'Alpha Cassian & Alpha Lucian'],
+      'the Obsidian Moon Territory',
+      [
+        {
+          id: 'mtta-1',
+          number: 1,
+          title: 'Chapter 1 — Double Bond',
+          publishedAt: '2026-11-05',
+          wordCount: 350,
+          content: `No wolf in recorded history had ever drawn two silver threads from the Moon Goddess. Yet as the twin brothers stepped into the clearing, both of their eyes blazed gold.`
+        }
+      ],
+      10
+    ),
     reviews: []
   },
   {
@@ -1398,7 +1437,7 @@ The final word is not survival. It is transformation.`
     coverUrl:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuCUJ30dTRxvoJT2Vh6bbbHO5nhBmD1UsB50KBoasG81WnqPxuYc928J4WGbLskzcUHTWsOsOsGiyl2h0dIVLFMNjI2IKerT1M6hAvXr2TjrXfXCxJb8rgr9hS9k9w7sr1bF7nkV6C7xXCUCy54h2_qJGJTOlxkMl__D4vTiFpRSa9GkX4uypfYO9pEprvzuzgtMFFA1uGvXKzCAj3T_bH7UkF120XM_AXdwdUMNKoCPQ',
     genre: 'Billionaire',
-    tags: ['Billionaire Romance', 'Contract Marriage', '100% Free'],
+    tags: ['Billionaire Romance', 'Contract Marriage', '10 Chapters', '100% Free'],
     rating: 4.8,
     views: '60.2K',
     status: 'Completed',
@@ -1406,16 +1445,23 @@ The final word is not survival. It is transformation.`
     synopsis:
       'What started as a mistaken courthouse signature in Las Vegas turns into a high-society whirlwind when the city’s most notorious billionaire heir refuses to sign the annulment.',
     source: 'custom',
-    chapters: [
-      {
-        id: 'iamp-1',
-        number: 1,
-        title: 'Chapter 1 — The Las Vegas Clause',
-        publishedAt: '2026-11-06',
-        wordCount: 410,
-        content: `“Read page four again,” Damien said, swirling his sparkling water in the penthouse lounge. “There is no annulment clause. For the next twelve months, you are Mrs. Sterling.”`
-      }
-    ],
+    chapters: buildMultiChaptersForStory(
+      'i-accidentally-married-a-playboy',
+      'I Accidentally Married a Playboy',
+      ['Sophia', 'Damien Sterling'],
+      'the Sterling Manhattan Penthouse',
+      [
+        {
+          id: 'iamp-1',
+          number: 1,
+          title: 'Chapter 1 — The Las Vegas Clause',
+          publishedAt: '2026-11-06',
+          wordCount: 410,
+          content: `“Read page four again,” Damien said, swirling his sparkling water in the penthouse lounge. “There is no annulment clause. For the next twelve months, you are Mrs. Sterling.”`
+        }
+      ],
+      10
+    ),
     reviews: []
   },
   {
@@ -1426,24 +1472,15 @@ The final word is not survival. It is transformation.`
     author: 'Jane Austen',
     coverUrl: 'https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg',
     genre: 'Romance',
-    tags: ['Romance', 'Slow Burn', '100% Free'],
+    tags: ['Romance', 'Slow Burn', '12 Chapters', '100% Free'],
     rating: 4.9,
-    views: '112.0K',
+    views: '412.0K',
     status: 'Completed',
     isFree: true,
     synopsis:
       'Spirited Elizabeth Bennet navigates society, family expectations, and her own quick judgments when the wealthy, aloof Mr. Fitzwilliam Darcy arrives in Hertfordshire.',
     source: 'gutenberg',
-    chapters: [
-      {
-        id: 'pp-1',
-        number: 1,
-        title: 'Chapter 1 — First Impressions at Netherfield',
-        publishedAt: '2026-10-12',
-        wordCount: 510,
-        content: `It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.\n\nHowever little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered as the rightful property of some one or other of their daughters.`
-      }
-    ],
+    chapters: getMultiChaptersForSlug('pride-and-prejudice'),
     reviews: []
   },
   {
@@ -1454,24 +1491,15 @@ The final word is not survival. It is transformation.`
     author: 'Alexandre Dumas',
     coverUrl: 'https://www.gutenberg.org/cache/epub/1184/pg1184.cover.medium.jpg',
     genre: 'Drama',
-    tags: ['Redemption', 'Justice', '100% Free'],
-    rating: 4.9,
-    views: '88.7K',
+    tags: ['Redemption', 'Justice', '12 Chapters', '100% Free'],
+    rating: 5.0,
+    views: '530.0K',
     status: 'Completed',
     isFree: true,
     synopsis:
       'Wrongfully imprisoned on the eve of his wedding, young sailor Edmond Dantès endures fourteen years in the grim fortress of Château d’If before escaping to uncover the treasure of Monte Cristo.',
     source: 'gutenberg',
-    chapters: [
-      {
-        id: 'cmc-1',
-        number: 1,
-        title: 'Chapter 1 — Marseilles: The Arrival',
-        publishedAt: '2026-10-08',
-        wordCount: 540,
-        content: `On the 24th of February, 1815, the look-out at Notre-Dame de la Garde signalled the three-master, the Pharaon, from Smyrna, Trieste, and Naples.`
-      }
-    ],
+    chapters: getMultiChaptersForSlug('the-count-of-monte-cristo'),
     reviews: []
   },
   ...SCRAPED_COLLECTION_BOOKS

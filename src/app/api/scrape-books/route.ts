@@ -32,10 +32,10 @@ function splitTextIntoChapters(rawText: string, bookTitle: string) {
     .map((p) => p.replace(/\n+/g, ' ').trim())
     .filter((p) => p.length > 60);
 
-  // Create up to 6 rich chapters (~6-8 paragraphs each) for fast mobile reading
+  // Create up to 15 rich chapters (~8 paragraphs each) for multi-chapter reading
   const chapters = [];
-  const parasPerChapter = 7;
-  const maxChapters = 6;
+  const parasPerChapter = 8;
+  const maxChapters = 15;
 
   for (let c = 0; c < maxChapters; c++) {
     const slice = paragraphs.slice(c * parasPerChapter, (c + 1) * parasPerChapter);
@@ -134,8 +134,8 @@ export async function POST(req: NextRequest) {
       });
       if (textRes.ok) {
         const fullText = await textRes.text();
-        // Take first 85,000 chars so chapter extraction is super fast
-        rawText = fullText.slice(0, 85000);
+        // Take first 160,000 chars so 15 full chapters are extracted
+        rawText = fullText.slice(0, 160000);
       }
     } catch {
       // Fallback if mirror is slow

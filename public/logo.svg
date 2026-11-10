@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Deep Obsidian & Royal Navy App Icon Background -->
+    <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#171b26" />
+      <stop offset="50%" stop-color="#0f131d" />
+      <stop offset="100%" stop-color="#07090f" />
+    </linearGradient>
+
+    <!-- Subtle Ambient Aura behind the Emblem -->
+    <radialGradient id="ambientGlow" cx="50%" cy="46%" r="48%">
+      <stop offset="0%" stop-color="#e11d48" stop-opacity="0.32" />
+      <stop offset="55%" stop-color="#ffb95f" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#0f131d" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Champagne & Warm Gold Metallic Gradient -->
+    <linearGradient id="champagneGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb" />
+      <stop offset="28%" stop-color="#fde68a" />
+      <stop offset="58%" stop-color="#f59e0b" />
+      <stop offset="85%" stop-color="#fef3c7" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+
+    <!-- Editorial Crimson Velvet Ribbon Gradient -->
+    <linearGradient id="crimsonVelvet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb7185" />
+      <stop offset="45%" stop-color="#e11d48" />
+      <stop offset="100%" stop-color="#9f1239" />
+    </linearGradient>
+
+    <!-- Crisp Drop Shadow for Emblem Depth -->
+    <filter id="emblemShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.65" />
+    </filter>
+  </defs>
+
+  <!-- Squircle App Icon Base -->
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#iconBg)" />
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#ambientGlow)" />
+
+  <!-- Precision Metallic Rim Border -->
+  <rect x="20" y="20" width="472" height="472" rx="108" fill="none" stroke="url(#champagneGold)" stroke-width="2.5" stroke-opacity="0.38" />
+  <rect x="32" y="32" width="448" height="448" rx="98" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.06" />
+
+  <!-- Main Emblem Group -->
+  <g filter="url(#emblemShadow)">
+    <!-- Rising Sun / Fountain Pen Nib of Illumination (Top Center) -->
+    <path d="M256,88 L298,176 L274,218 L256,204 L238,218 L214,176 Z" fill="url(#champagneGold)" />
+    <!-- Inner Nib Slit & Eyelet -->
+    <line x1="256" y1="88" x2="256" y2="162" stroke="#0f131d" stroke-width="5" stroke-linecap="round" />
+    <circle cx="256" cy="166" r="8.5" fill="#0f131d" />
+
+    <!-- Radiant Light Rays Behind Nib -->
+    <path d="M188,150 L158,125" stroke="url(#champagneGold)" stroke-width="4.5" stroke-linecap="round" opacity="0.7" />
+    <path d="M324,150 L354,125" stroke="url(#champagneGold)" stroke-width="4.5" stroke-linecap="round" opacity="0.7" />
+    <circle cx="256" cy="66" r="5" fill="#fde68a" />
+
+    <!-- Upper Turning Page Wings (Gold Foil) -->
+    <path d="M116,214 C162,214 214,232 248,266 L248,358 C214,326 162,308 116,308 Z" fill="url(#champagneGold)" opacity="0.92" />
+    <path d="M396,214 C350,214 298,232 264,266 L264,358 C298,326 350,308 396,308 Z" fill="url(#champagneGold)" opacity="0.92" />
+
+    <!-- Lower Open Book Base Pages (Ivory/Gold Outline) -->
+    <path d="M96,248 C152,248 210,268 248,304 L248,384 C210,350 152,332 96,332 Z" fill="#1c2233" stroke="url(#champagneGold)" stroke-width="5" stroke-linejoin="round" />
+    <path d="M416,248 C360,248 302,268 264,304 L264,384 C302,350 360,332 416,332 Z" fill="#1c2233" stroke="url(#champagneGold)" stroke-width="5" stroke-linejoin="round" />
+
+    <!-- Central Crimson Velvet Bookmark Ribbon ("T" Spine Anchor) -->
+    <path d="M240,204 L272,204 L272,426 L256,408 L240,426 Z" fill="url(#crimsonVelvet)" />
+
+    <!-- Subtle Gold Horizon Arc Connecting the Book -->
+    <path d="M136,396 Q256,356 376,396" fill="none" stroke="url(#champagneGold)" stroke-width="4" stroke-linecap="round" opacity="0.85" />
+  </g>
+</svg>

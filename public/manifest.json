@@ -1,0 +1,49 @@
+{
+  "id": "/",
+  "name": "Today's Novel — Midnight Literary Discovery",
+  "short_name": "Today's Novel",
+  "description": "100% Free Reading App featuring UNBOUND by Kenah Pascal (Foreword by Dr. Theresia Fuh-Tabe) and top web novels.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0f19",
+  "theme_color": "#0b0f19",
+  "categories": ["books", "entertainment", "education"],
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Read UNBOUND (#1 Priority)",
+      "short_name": "UNBOUND",
+      "description": "Read UNBOUND by Kenah Pascal",
+      "url": "/book/unbound",
+      "icons": [{ "src": "/logo.svg", "sizes": "192x192", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "My Saved Library",
+      "short_name": "Library",
+      "description": "Open your saved books and offline chapters",
+      "url": "/library",
+      "icons": [{ "src": "/logo.svg", "sizes": "192x192", "type": "image/svg+xml" }]
+    }
+  ]
+}

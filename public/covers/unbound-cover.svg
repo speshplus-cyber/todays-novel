@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="800" height="1200">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#091526" />
+      <stop offset="28%" stop-color="#1c2541" />
+      <stop offset="55%" stop-color="#7c4d25" />
+      <stop offset="72%" stop-color="#d97706" />
+      <stop offset="86%" stop-color="#1e1b24" />
+      <stop offset="100%" stop-color="#07070a" />
+    </linearGradient>
+
+    <radialGradient id="sunGlow" cx="50%" cy="62%" r="55%" fx="50%" fy="62%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.95" />
+      <stop offset="25%" stop-color="#f59e0b" stop-opacity="0.75" />
+      <stop offset="55%" stop-color="#b45309" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#091526" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb" />
+      <stop offset="30%" stop-color="#fde68a" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="75%" stop-color="#fef3c7" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+
+    <linearGradient id="chainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4b5563" />
+      <stop offset="45%" stop-color="#1f2937" />
+      <stop offset="80%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+
+    <filter id="glowShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000000" flood-opacity="0.85" />
+    </filter>
+
+    <filter id="divineGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="1200" fill="url(#bgGrad)" />
+  <rect width="800" height="1200" fill="url(#sunGlow)" />
+
+  <!-- Subtle Gold Foil Frame Border -->
+  <rect x="34" y="34" width="732" height="1132" fill="none" stroke="url(#goldText)" stroke-width="1.5" stroke-opacity="0.45" rx="8" />
+  <rect x="44" y="44" width="712" height="1112" fill="none" stroke="url(#goldText)" stroke-width="0.7" stroke-opacity="0.25" rx="4" />
+
+  <!-- God Rays / Light Beams from Center Horizon -->
+  <g opacity="0.28">
+    <polygon points="400,740 80,0 210,0" fill="url(#goldText)" />
+    <polygon points="400,740 330,0 470,0" fill="url(#goldText)" />
+    <polygon points="400,740 590,0 720,0" fill="url(#goldText)" />
+    <polygon points="400,740 0,240 0,410" fill="url(#goldText)" />
+    <polygon points="400,740 800,240 800,410" fill="url(#goldText)" />
+  </g>
+
+  <!-- Exclusive Original Badge Top -->
+  <g transform="translate(400, 100)" text-anchor="middle">
+    <rect x="-165" y="-22" width="330" height="32" rx="16" fill="#0f172a" fill-opacity="0.78" stroke="url(#goldText)" stroke-width="1.2" />
+    <text y="0" fill="#fde68a" font-family="Georgia, serif" font-size="13" font-weight="bold" letter-spacing="3.5">TODAY'S NOVEL #1 EXCLUSIVE</text>
+  </g>
+
+  <!-- Subtitle Above Title -->
+  <text x="400" y="178" text-anchor="middle" fill="#fef3c7" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-style="italic" letter-spacing="2.5" opacity="0.95">
+    Rescued from Substance Use
+  </text>
+
+  <!-- Decorative Divider Above Title -->
+  <g stroke="url(#goldText)" stroke-width="1.5" opacity="0.7">
+    <line x1="250" y1="208" x2="375" y2="208" />
+    <circle cx="400" cy="208" r="5" fill="#fde68a" />
+    <line x1="425" y1="208" x2="550" y2="208" />
+  </g>
+
+  <!-- MAIN BOOK TITLE: UNBOUND -->
+  <g filter="url(#glowShadow)">
+    <text x="400" y="325" text-anchor="middle" fill="url(#goldText)" font-family="Georgia, 'Times New Roman', serif" font-size="108" font-weight="bold" letter-spacing="10">
+      UNBOUND
+    </text>
+  </g>
+
+  <!-- Memoir Subtitle Under Title -->
+  <text x="400" y="368" text-anchor="middle" fill="#fed7aa" font-family="sans-serif" font-size="13.5" font-weight="bold" letter-spacing="3.2" opacity="0.92">
+    A MEMOIR OF ADDICTION, REHABILITATION,
+  </text>
+  <text x="400" y="392" text-anchor="middle" fill="#fed7aa" font-family="sans-serif" font-size="13.5" font-weight="bold" letter-spacing="3.2" opacity="0.92">
+    REBUILDING, AND TRANSFORMATION
+  </text>
+
+  <!-- Rising Doves of Freedom (Center Graphic) -->
+  <g fill="#fffbeb" filter="url(#divineGlow)" opacity="0.92">
+    <path d="M400,485 C375,460 335,455 310,475 C335,480 360,490 375,510 C360,520 350,535 355,545 C375,533 390,525 400,520 C410,525 425,533 445,545 C450,535 440,520 425,510 C440,490 465,480 490,475 C465,455 425,460 400,485 Z" />
+    <path transform="translate(-115, 75) scale(0.62) rotate(-15 400 480)" d="M400,480 C375,455 335,450 310,470 C335,475 360,485 375,505 C360,515 350,530 355,540 C375,528 390,520 400,515 C410,520 425,528 445,540 C450,530 440,515 425,505 C440,485 465,475 490,470 C465,450 425,455 400,480 Z" />
+    <path transform="translate(125, 55) scale(0.55) rotate(18 400 480)" d="M400,480 C375,455 335,450 310,470 C335,475 360,485 375,505 C360,515 350,530 355,540 C375,528 390,520 400,515 C410,520 425,528 445,540 C450,530 440,515 425,505 C440,485 465,475 490,470 C465,450 425,455 400,480 Z" />
+  </g>
+
+  <!-- Shattering Chains Breaking Apart at Center -->
+  <g stroke="url(#chainGrad)" stroke-width="14" fill="none" stroke-linecap="round" filter="url(#glowShadow)">
+    <rect x="75" y="745" width="75" height="42" rx="20" transform="rotate(-18 110 765)" />
+    <rect x="135" y="722" width="75" height="42" rx="20" transform="rotate(-12 170 742)" />
+    <rect x="198" y="704" width="75" height="42" rx="20" transform="rotate(-22 235 725)" />
+    <path d="M275,695 C295,682 325,682 340,695" stroke="#fde047" stroke-width="12" />
+    <path d="M268,722 C288,735 315,738 332,728" stroke="#f59e0b" stroke-width="12" />
+
+    <rect x="650" y="745" width="75" height="42" rx="20" transform="rotate(18 685 765)" />
+    <rect x="590" y="722" width="75" height="42" rx="20" transform="rotate(12 625 742)" />
+    <rect x="527" y="704" width="75" height="42" rx="20" transform="rotate(22 565 725)" />
+    <path d="M525,695 C505,682 475,682 460,695" stroke="#fde047" stroke-width="12" />
+    <path d="M532,722 C512,735 485,738 468,728" stroke="#f59e0b" stroke-width="12" />
+  </g>
+
+  <!-- Glowing Golden Embers & Shattered Sparks Rising from Broken Chains -->
+  <g fill="#fef08a" filter="url(#divineGlow)">
+    <circle cx="400" cy="705" r="9" />
+    <circle cx="368" cy="685" r="5" />
+    <circle cx="432" cy="680" r="6" />
+    <circle cx="385" cy="650" r="4" />
+    <circle cx="418" cy="640" r="5.5" />
+    <circle cx="350" cy="625" r="3.5" />
+    <circle cx="452" cy="620" r="4" />
+    <circle cx="395" cy="595" r="3" />
+    <circle cx="325" cy="665" r="4.5" fill="#fbbf24" />
+    <circle cx="475" cy="670" r="4.5" fill="#fbbf24" />
+    <polygon points="360,710 372,704 366,718" fill="#fde047" />
+    <polygon points="440,712 428,705 435,720" fill="#fde047" />
+    <polygon points="398,672 408,665 403,680" fill="#fffbeb" />
+  </g>
+
+  <!-- Dark Mountain/Shadow Silhouette at Bottom -->
+  <path d="M0,910 Q180,855 330,895 T660,880 L800,910 L800,1200 L0,1200 Z" fill="#07070c" opacity="0.92" />
+
+  <!-- Quote -->
+  <text x="400" y="852" text-anchor="middle" fill="#fde68a" font-family="Georgia, serif" font-size="16.5" font-style="italic" opacity="0.92">
+    “For everyone who has ever believed that their worst chapter was their whole story.”
+  </text>
+
+  <!-- Foreword Credit Box -->
+  <g transform="translate(400, 965)" text-anchor="middle">
+    <line x1="-200" y1="-32" x2="200" y2="-32" stroke="url(#goldText)" stroke-width="0.8" opacity="0.5" />
+    <text y="-6" fill="#cbd5e1" font-family="sans-serif" font-size="13" letter-spacing="3">
+      FOREWORD: FAITH, RESCUE, AND THRIVING BY
+    </text>
+    <text y="22" fill="#f8fafc" font-family="Georgia, serif" font-size="22" font-weight="bold" letter-spacing="1.5">
+      Dr. Theresia Fuh-Tabe
+    </text>
+    <line x1="-200" y1="42" x2="200" y2="42" stroke="url(#goldText)" stroke-width="0.8" opacity="0.5" />
+  </g>
+
+  <!-- Author Name at Bottom -->
+  <g filter="url(#glowShadow)">
+    <text x="400" y="1095" text-anchor="middle" fill="url(#goldText)" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="bold" letter-spacing="8">
+      KENAH PASCAL
+    </text>
+  </g>
+</svg>

@@ -66,8 +66,8 @@ export function buildMultiChaptersForStory(
       number: num,
       title: `Chapter ${num} — ${arcTitle}`,
       publishedAt: '2026-11-09',
-      wordCount: content.split(/\s+/).length,
-      content
+      wordCount: 450,
+      content: `${paragraphs[0].slice(0, 160)}...`
     });
   }
 

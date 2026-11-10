@@ -46,8 +46,19 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/about" className="text-rose-300 hover:text-rose-200 font-semibold flex items-center gap-1.5">
+                  <Heart className="h-3.5 w-3.5 fill-rose-400 text-rose-400" />
+                  About Kenah Pascal &amp; Dedication to My Wife
+                </Link>
+              </li>
+              <li>
                 <Link href="/read/unbound/1" className="hover:text-white">
                   Foreword by Dr. Theresia Fuh-Tabe
+                </Link>
+              </li>
+              <li>
+                <Link href="/collections" className="hover:text-white">
+                  Free Book Collections
                 </Link>
               </li>
               <li>
@@ -70,13 +81,14 @@ export default function Footer() {
             <p className="text-xs leading-relaxed text-slate-400">
               <strong className="text-slate-200">Kenah Pascal</strong> writes from lived experience,
               turning a real-life journey through addiction, withdrawal, rehab, and relapse into a
-              message of rescue, hope, and redemption in Christ Jesus.
+              message of rescue, hope, and redemption in Christ Jesus. Created Today&apos;s Novel
+              with deep devotion as a gift to his beloved wife.
             </p>
             <Link
-              href="/book/unbound"
-              className="mt-3 inline-block text-xs font-semibold text-amber-400 hover:text-amber-300"
+              href="/about"
+              className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-amber-400 hover:text-amber-300"
             >
-              Read Full Author Bio &rarr;
+              Read Full Bio &amp; Letter to My Wife &rarr;
             </Link>
           </div>
         </div>

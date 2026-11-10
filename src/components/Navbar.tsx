@@ -41,6 +41,16 @@ export default function Navbar() {
               ★ Read UNBOUND (#1)
             </Link>
             <Link
+              href="/about"
+              className={`px-3 py-1 rounded-full text-xs font-bold transition-colors flex items-center gap-1 ${
+                pathname === '/about'
+                  ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
+                  : 'text-rose-300/90 hover:text-rose-200'
+              }`}
+            >
+              ♥ About &amp; Dedication
+            </Link>
+            <Link
               href="/collections"
               className={`px-3 py-1 rounded-full text-xs font-semibold transition-colors ${
                 pathname === '/collections'

@@ -38,11 +38,10 @@ export default function BottomNav() {
       badge: bookmarks.length
     },
     {
-      label: 'Admin',
-      href: '/admin',
-      icon: 'admin_panel_settings',
-      isActive: pathname === '/admin',
-      badge: totalUnread
+      label: 'Dedication',
+      href: '/about',
+      icon: 'favorite',
+      isActive: pathname === '/about'
     }
   ];
 

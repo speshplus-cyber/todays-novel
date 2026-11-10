@@ -124,18 +124,30 @@ export default function UserAuthPage() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="grid grid-cols-2 gap-2.5">
             <Link
               href="/read/unbound/1"
-              className="flex-1 text-center rounded-xl bg-[#e11d48] py-3 px-4 text-xs font-bold text-white shadow-lg"
+              className="text-center rounded-xl bg-[#e11d48] py-2.5 px-3 text-xs font-bold text-white shadow-lg hover:brightness-110 transition-all"
             >
-              Read UNBOUND (#1 Priority)
+              Read UNBOUND (#1)
             </Link>
             <Link
               href="/library"
-              className="flex-1 text-center rounded-xl bg-[#1e273d] border border-[#334155] py-3 px-4 text-xs font-bold text-[#f8fafc]"
+              className="text-center rounded-xl bg-[#1e273d] border border-[#334155] py-2.5 px-3 text-xs font-bold text-[#f8fafc] hover:bg-[#283552] transition-all"
             >
               Open My Library
+            </Link>
+            <Link
+              href="/about"
+              className="text-center rounded-xl bg-rose-500/20 border border-rose-500/40 py-2.5 px-3 text-xs font-bold text-rose-300 hover:bg-rose-500/30 transition-all"
+            >
+              ♥ Dedication &amp; About
+            </Link>
+            <Link
+              href="/admin"
+              className="text-center rounded-xl bg-amber-500/20 border border-amber-500/40 py-2.5 px-3 text-xs font-bold text-amber-300 hover:bg-amber-500/30 transition-all"
+            >
+              Author Admin Panel
             </Link>
           </div>
         </div>

@@ -124,12 +124,13 @@ export const BOOK_COLLECTIONS: BookCollection[] = [
     title: 'Animal Fables, Political Satire & Social Allegory',
     subtitle: 'Allegorical farm rebellions, sharp political fables, and social commentary (10–12 Chapters Each)',
     description:
-      'Explore our 10-chapter Companion & Allegorical Fable on the Manor Farm Rebellion alongside classic political satires and dystopian allegories by Swift, Jack London, Voltaire, Conrad, and Thomas More.',
+      'Explore our 10-chapter Companion & Allegorical Fable on the Manor Farm Rebellion alongside classic animal fables and political satires by Aesop, Swift, Jack London, Voltaire, Conrad, and Thomas More.',
     badge: 'Satire & Allegory',
     icon: 'balance',
     accentColor: 'from-[#ef4444] to-[#10b981]',
     bookSlugs: [
       'animal-farm-allegory-and-companion',
+      'aesops-fables',
       'gullivers-travels',
       'the-iron-heel',
       'candide',
@@ -497,6 +498,12 @@ const SYNOPSES_BY_SLUG: Record<string, { subtitle: string; tagline: string; syno
     tagline: 'We must cultivate our garden.',
     synopsis: 'Young Candide’s sheltered belief that “all is for the best in the best of all possible worlds” is tested by war, shipwreck, and hypocrisy across the globe.',
     tags: ['Satire', 'Wit & Philosophy', '12 Chapters', '100% Free']
+  },
+  'aesops-fables': {
+    subtitle: 'Classic Animal Allegories and Moral Tales',
+    tagline: 'Timeless fables of human nature, power, and wisdom.',
+    synopsis: 'The foundational collection of animal fables and political allegories—including The Wolf in Sheep’s Clothing, The Tortoise and the Hare, and The Council of Mice—exploring justice, humility, and caution.',
+    tags: ['Animal Fables', 'Allegory', '12 Chapters', '100% Free']
   }
 };
 
@@ -517,20 +524,20 @@ const ORIGINAL_AFRICAN_PLAYS_AND_FABLES: Book[] = [
   {
     id: 'play-awa-voice-of-the-village',
     slug: 'awa-the-voice-of-the-village-play',
-    title: 'Awa: The Voice of the Village (Stage Play)',
-    subtitle: 'A 10-Scene African Stage Drama of Tradition, Marriage, and Self-Determination',
-    tagline: 'A daughter who refuses to be traded for titles becomes the conscience of her land.',
-    author: 'Cameroon & West African Stage Ensemble',
+    title: 'Awa (Ewa) & Other Plays: The Voice of the Village',
+    subtitle: 'A 10-Scene Cameroonian Theatrical Drama of African Feminism, Marriage, and Tradition',
+    tagline: 'Inspired by Anne Tanyi-Tang’s renowned collection—a daughter who refuses to be traded for bride-price becomes the conscience of her people.',
+    author: 'Inspired by Anne Tanyi-Tang & Cameroon Stage Ensemble',
     coverUrl: 'https://www.gutenberg.org/cache/epub/2542/pg2542.cover.medium.jpg',
     genre: 'Drama',
-    tags: ['African Play', 'Awa Drama', '10 Scenes', '100% Free'],
+    tags: ['Awa and Other Plays', 'Cameroon GCE Drama', 'African Theatre', '10 Scenes', '100% Free'],
     rating: 5.0,
     views: '285K',
     status: 'Completed',
     isFree: true,
     source: 'original',
     synopsis:
-      'Set in a vibrant West and Central African market town, spirited young Awa challenges the arranged bride-price compact brokered by the village council, sparking a ten-scene theatrical drama of family honor, wisdom, and liberation.',
+      'Drawing direct inspiration from Dr. Anne Tanyi-Tang’s influential Cameroonian dramatic collection Ewa and Other Plays (widely known and studied as Awa and Other Plays across Cameroon and West Africa), this 10-scene stage drama follows spirited protagonist Awa. In a vibrant market town, she bravely stands before the elders and the village council to challenge patriarchal bride-price customs, igniting an unforgettable theatrical journey of female empowerment, family honor, and justice.',
     chapters: buildMultiChaptersForStory(
       'awa-the-voice-of-the-village-play',
       'Awa: The Voice of the Village',

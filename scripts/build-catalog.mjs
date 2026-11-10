@@ -51,7 +51,8 @@ const GUTENBERG_BOOKS = [
   { id: 1164, slug: 'the-iron-heel', title: 'The Iron Heel', author: 'Jack London', genre: 'Satire & Allegory', collectionId: 'col-satire-allegory', views: '260K', rating: 4.8 },
   { id: 219, slug: 'heart-of-darkness', title: 'Heart of Darkness', author: 'Joseph Conrad', genre: 'Satire & Allegory', collectionId: 'col-satire-allegory', views: '370K', rating: 4.8 },
   { id: 2130, slug: 'utopia', title: 'Utopia', author: 'Sir Thomas More', genre: 'Satire & Allegory', collectionId: 'col-satire-allegory', views: '285K', rating: 4.8 },
-  { id: 19942, slug: 'candide', title: 'Candide', author: 'Voltaire', genre: 'Satire & Allegory', collectionId: 'col-satire-allegory', views: '335K', rating: 4.9 }
+  { id: 19942, slug: 'candide', title: 'Candide', author: 'Voltaire', genre: 'Satire & Allegory', collectionId: 'col-satire-allegory', views: '335K', rating: 4.9 },
+  { id: 21, slug: 'aesops-fables', title: 'Aesop’s Fables', author: 'Aesop', genre: 'Satire & Allegory', collectionId: 'col-satire-allegory', views: '450K', rating: 4.9 }
 ];
 
 function extractChaptersFromText(rawText, slug, bookTitle, targetCount = 12) {

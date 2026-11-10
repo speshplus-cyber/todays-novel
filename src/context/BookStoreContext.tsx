@@ -137,7 +137,7 @@ interface BookStoreContextType {
 
 const BookStoreContext = createContext<BookStoreContextType | undefined>(undefined);
 
-const STORAGE_KEY_BOOKS = 'todays_novel_books_v8';
+const STORAGE_KEY_BOOKS = 'todays_novel_books_v9';
 const STORAGE_KEY_BOOKMARKS = 'todays_novel_bookmarks_v5';
 const STORAGE_KEY_PROGRESS = 'todays_novel_progress_v5';
 const STORAGE_KEY_USERS = 'todays_novel_users_v5';

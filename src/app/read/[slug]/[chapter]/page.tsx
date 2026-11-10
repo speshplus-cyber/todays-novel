@@ -46,6 +46,19 @@ export default function ChapterReaderPage() {
   const [commentText, setCommentText] = useState('');
   const [selectedReaction, setSelectedReaction] = useState<'🔥' | '❤️' | '🙏' | '💡'>('🔥');
   const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const [fullChapterContent, setFullChapterContent] = useState<string | null>(null);
+
+  useEffect(() => {
+    setFullChapterContent(null);
+    fetch(`/api/chapter?slug=${slug}&chapter=${chapterNum}`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (data?.ok && data.chapter?.content) {
+          setFullChapterContent(data.chapter.content);
+        }
+      })
+      .catch(() => {});
+  }, [slug, chapterNum]);
 
   useEffect(() => {
     if (book && chapterNum) {
@@ -82,7 +95,8 @@ export default function ChapterReaderPage() {
 
   const currentChapter =
     book.chapters.find((c) => c.number === chapterNum) || book.chapters[0];
-  const paragraphs = currentChapter.content
+  const activeContent = fullChapterContent || currentChapter.content;
+  const paragraphs = activeContent
     .split('\n\n')
     .map((p) => p.trim())
     .filter(Boolean);
